@@ -1,0 +1,380 @@
+\documentclass[aspectratio=169]{beamer}
+
+% ---------------- PACKAGES ----------------
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+% ---------------- THEME ----------------
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% ---------------- TITLE INFORMATION ----------------
+\title[Smart Water Tank Quality Monitor]
+{SMART WATER TANK QUALITY MONITOR}
+
+\subtitle{IoT and Embedded Systems Project}
+
+\author{
+V. Pranathi -- 2520040104\\
+B. Sahithi -- 2520040111
+}
+
+\institute{
+Department of ECE
+}
+
+\date{}
+
+% ---------------- DOCUMENT ----------------
+\begin{document}
+
+% =====================================================
+% TITLE SLIDE
+% =====================================================
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% =====================================================
+% ABSTRACT
+% =====================================================
+
+\begin{frame}{Abstract}
+
+\begin{itemize}
+
+    \item Water tanks are often monitored manually, which can lead to
+    overflow, low-level conditions, and inconvenience.
+
+    \item The proposed system uses an embedded controller and sensors
+    to continuously monitor water level and temperature.
+
+    \item Sensor data is transmitted through IoT connectivity and
+    displayed on a mobile dashboard.
+
+    \item The system enables remote monitoring and can be extended
+    with alerts and additional water-quality sensors.
+
+\end{itemize}
+
+\end{frame}
+
+% =====================================================
+% INTRODUCTION
+% =====================================================
+
+\begin{frame}{Introduction}
+
+\begin{itemize}
+
+    \item Traditional water-tank monitoring usually requires
+    physical inspection.
+
+    \item Manual monitoring cannot provide continuous real-time
+    information.
+
+    \item Overflow can result in unnecessary water wastage.
+
+    \item Temperature monitoring provides additional information
+    about stored water.
+
+    \item IoT technology allows sensor readings to be viewed
+    remotely through a mobile dashboard.
+
+    \item The project combines sensors, an embedded controller,
+    wireless communication, and a user interface.
+
+\end{itemize}
+
+\end{frame}
+
+% =====================================================
+% PROBLEM STATEMENT
+% =====================================================
+
+\begin{frame}{Problem Statement}
+
+\begin{itemize}
+
+    \item Manual checking of tank level is inconvenient.
+
+    \item Tank overflow may go unnoticed and cause water wastage.
+
+    \item Users cannot easily monitor the tank when they are away.
+
+    \item Water temperature is not continuously tracked.
+
+    \item There is no simple centralized mobile view of sensor readings.
+
+    \item \textbf{Goal:} Develop a low-cost IoT system for
+    real-time tank monitoring.
+
+\end{itemize}
+
+\end{frame}
+
+% =====================================================
+% OBJECTIVES
+% =====================================================
+
+\begin{frame}{Objectives}
+
+\begin{itemize}
+
+    \item Monitor water level in real time.
+
+    \item Measure water temperature.
+
+    \item Process sensor readings using an embedded microcontroller.
+
+    \item Transmit sensor data using Wi-Fi / IoT communication.
+
+    \item Display readings on a mobile dashboard.
+
+    \item Provide status information and support timely monitoring.
+
+    \item Create a base for future water-quality and automatic
+    pump-control features.
+
+\end{itemize}
+
+\end{frame}
+
+% =====================================================
+% PROPOSED SYSTEM
+% =====================================================
+
+\begin{frame}{Proposed System}
+
+\centering
+
+\begin{block}{System Flow}
+\centering
+Water Level Sensor
+$\rightarrow$
+ESP32 / Microcontroller
+$\rightarrow$
+Wi-Fi / IoT
+$\rightarrow$
+Cloud / Server
+$\rightarrow$
+Mobile Dashboard
+\end{block}
+
+\vspace{0.4cm}
+
+\begin{itemize}
+
+    \item \textbf{Water Level Sensor:} Measures the amount of water
+    in the tank.
+
+    \item \textbf{Temperature Sensor:} Measures stored water
+    temperature.
+
+    \item \textbf{ESP32:} Receives and processes sensor readings.
+
+    \item \textbf{Wi-Fi / IoT:} Transfers data to the server or
+    cloud platform.
+
+    \item \textbf{Mobile Dashboard:} Displays current readings.
+
+\end{itemize}
+
+\end{frame}
+
+% =====================================================
+% HARDWARE AND SOFTWARE
+% =====================================================
+
+\begin{frame}{Hardware \& Software Requirements}
+
+\begin{columns}
+
+% LEFT COLUMN
+\column{0.48\textwidth}
+
+\textbf{Hardware}
+
+\begin{itemize}
+    \item ESP32 development board
+    \item Water-level sensor
+    \item Temperature sensor such as DS18B20
+    \item Water tank / prototype tank
+    \item Breadboard
+    \item Jumper wires
+    \item Power supply
+\end{itemize}
+
+% RIGHT COLUMN
+\column{0.48\textwidth}
+
+\textbf{Software}
+
+\begin{itemize}
+    \item Arduino IDE
+    \item Embedded C/C++
+    \item IoT platform
+    \item Cloud database
+    \item Mobile dashboard
+\end{itemize}
+
+\end{columns}
+
+\end{frame}
+
+% =====================================================
+% WORKING PRINCIPLE
+% =====================================================
+
+\begin{frame}{Working Principle}
+
+\begin{enumerate}
+
+    \item Water-level and temperature sensors collect the tank
+    readings.
+
+    \item The ESP32 receives and processes the sensor data.
+
+    \item The controller connects to the internet through Wi-Fi.
+
+    \item Sensor readings are sent to the IoT platform or server.
+
+    \item The mobile dashboard displays current water level and
+    temperature.
+
+    \item Thresholds can be configured for high- and low-level
+    notifications.
+
+\end{enumerate}
+
+\end{frame}
+
+% =====================================================
+% EXPECTED OUTPUT
+% =====================================================
+
+\begin{frame}{Expected Output}
+
+\begin{center}
+
+\begin{block}{Sample Mobile Dashboard}
+
+\Large
+\textbf{WATER LEVEL}\\
+78\%
+
+\vspace{0.3cm}
+
+\textbf{TEMPERATURE}\\
+27.4$^\circ$C
+
+\vspace{0.3cm}
+
+\textbf{STATUS}\\
+NORMAL
+
+\end{block}
+
+\end{center}
+
+\end{frame}
+
+% =====================================================
+% APPLICATIONS
+% =====================================================
+
+\begin{frame}{Applications}
+
+\begin{itemize}
+
+    \item Smart homes and residential buildings
+
+    \item Apartments and hostels
+
+    \item Schools and colleges
+
+    \item Hotels and hospitals
+
+    \item Industrial water-storage systems
+
+    \item Agricultural and institutional water tanks
+
+\end{itemize}
+
+\end{frame}
+
+% =====================================================
+% FUTURE SCOPE
+% =====================================================
+
+\begin{frame}{Future Scope}
+
+\begin{itemize}
+
+    \item Add a pH sensor for acidity / alkalinity monitoring.
+
+    \item Add a turbidity sensor for water clarity.
+
+    \item Add TDS sensing for dissolved-solids estimation.
+
+    \item Control the water pump automatically based on level.
+
+    \item Send mobile notifications for abnormal conditions.
+
+    \item Store historical data and display graphs.
+
+    \item Use data analytics or ML for water-usage prediction.
+
+    \item Support monitoring of multiple tanks.
+
+\end{itemize}
+
+\end{frame}
+
+% =====================================================
+% CONCLUSION
+% =====================================================
+
+\begin{frame}{Conclusion}
+
+\begin{itemize}
+
+    \item The Smart Water Tank Quality Monitor provides an
+    IoT-based approach to real-time tank monitoring.
+
+    \item It combines water-level and temperature sensing with
+    an embedded controller and wireless communication.
+
+    \item A mobile dashboard enables convenient remote access
+    to current readings.
+
+    \item The system can be extended with water-quality sensors,
+    alerts, and automatic pump control.
+
+\end{itemize}
+
+\end{frame}
+
+% =====================================================
+% THANK YOU
+% =====================================================
+
+\begin{frame}
+    \centering
+
+    \Huge
+    \textbf{Thank You}
+
+    \vspace{0.5cm}
+
+    \Large
+    Questions?
+
+\end{frame}
+
+% =====================================================
+\end{document}
